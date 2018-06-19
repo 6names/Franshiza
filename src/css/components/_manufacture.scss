@@ -1,0 +1,77 @@
+.manufacture {
+    &__inner {
+        @include inner;
+        padding-top: 2.3%;
+        padding-bottom: 195px;
+    }
+    
+    &__text {
+        margin-bottom: 29px;
+        font-size: 24px;
+        line-height: 1.5em;
+        color: $lightColor;
+    }
+    
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 615px;
+    }
+    
+    &__item {
+        width: calc(50% - 10px);
+        margin-bottom: 25px;
+        
+        &-icon {
+            position: relative;
+            width: 65px;
+            height: 65px;
+            margin-bottom: 5px;
+            background-color: $gray;
+            border-radius: 50%;
+            
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 34px;
+                height: 34px;
+                transform: translate3d(-50%, -50%, 0);
+                fill: $theme;
+            }
+        }
+        
+        &-name {
+            font-family: $secondFont;
+            font-size: 28px;
+            max-width: 205px;
+        }
+    }
+    
+    @media only screen and (max-width: 1024px) {
+        &__inner {
+            padding-top: 40px;
+            padding-bottom: 50px;
+        }
+        
+        &__list {
+            max-width: 100%;
+        }
+    }
+    
+    @media only screen and (max-width: 680px) {
+        
+        &__text {
+            font-size: 19px;
+        }
+        
+        &__list {
+            display: block;
+        }
+        
+        &__item {
+            width: 100%;
+        }
+    }
+}

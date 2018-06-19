@@ -1,0 +1,102 @@
+.steps {
+    padding-top: 64px;
+    padding-bottom: 77px;
+    
+    &__inner {
+        @include inner;
+    }
+    
+    &__list {
+        position: relative;
+        margin-top: 71px;
+        margin-bottom: 61px;
+        counter-reset: steps;
+        
+        &:before {
+            position: absolute;
+            content: '';
+            top: 50px;
+            left: 87%;
+            display: block;
+            width: 130px;
+            height: 34px;
+            background-image: $stepsArrow;
+            background-size: 100% 100%;
+        }
+    }
+    
+    &__subtitle {
+        padding-left: 15px;
+        padding-right: 15px;
+        font-family: $secondFont;
+        font-size: 40px;
+        text-align: center;
+    }
+    
+    &__item {
+        position: relative;
+        padding-left: 104px;
+        padding-bottom: 60px;
+        
+        &:before {
+            position: absolute;
+            content: counter(steps);
+            counter-increment: steps;
+            top: -20px;
+            left: 0;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 65px;
+            height: 65px;
+            padding-top: 2px;
+            font-size: 24px;
+            border-radius: 50%;
+            background-color: $gray;
+        }
+        
+        &:not(:last-child):after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 30px;
+            z-index: 1;
+            display: block;
+            width: 6px;
+            height: 100%;
+            background-color: $gray;
+        }
+    
+        &-name {
+            margin-bottom: 6px;
+            font-family: $secondFont;
+            font-size: 30px;
+        }
+        
+        &-text {
+            @include standardText;
+            max-width: 530px;
+        }
+    }
+    
+    @media only screen and (max-width: 1024px) {
+        &__list {
+            &:before {
+                display: none;
+            }
+        }
+    }
+    
+    @media only screen and (max-width: 680px) {
+        padding-bottom: 30px;
+        
+        &__item {
+            padding-left: 80px;
+        }
+        
+        &__list {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,226 @@
+.cooperation {
+    position: relative;
+    padding-top: 36px;
+    padding-bottom: 74px;
+    background-color: $gray;
+    
+    &__inner {
+        @include inner;
+    }
+    
+    &__sizes {
+        display: flex;
+        margin-bottom: 30px;
+        font-family: $secondFont;
+        font-size: 36px;
+        
+        &-item {
+            &:not(:first-child) {
+                padding-left: 2%;
+                white-space: nowrap;
+            }
+        }
+    }
+    
+    &__item {
+        position: relative;
+        background: $white;
+        box-shadow: $shadow;
+        margin-bottom: 40px;
+        
+        &-image {
+            position: relative;
+            
+            img {
+                width: 100%;
+            }
+            
+            &:before {
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                z-index: 2;
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: rgba($black, 0.3);
+            }
+        }
+        
+        &-name {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+            max-width: 430px;
+            padding-top: 6%;
+            padding-left: 5.2%;
+            font-family: $secondFont;
+            font-size: 48px;
+            line-height: 1em;
+    
+            span {
+                display: inline-block;
+                padding-top: 12px;
+                padding-right: 18px;
+                padding-bottom: 5px;
+                padding-left: 18px;
+                background: $white;
+                
+                &:last-child {
+                    font-size: 0.8em;
+                }
+            }
+        }
+        
+        &-content {
+            padding-top: 5.9%;
+            padding-right: 6.1%;
+            padding-bottom: 4.9%;
+            padding-left: 6.1%;
+        }
+        
+        &-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 36px;
+            
+            &-item {
+                display: flex;
+                align-items: flex-start;
+                width: calc(60% - 10px);
+                margin-bottom: 10px;
+                @include standardText;
+                
+                &:nth-child(odd) {
+                    width: calc(40% - 10px);
+                }
+    
+                &_wide:nth-child(odd),
+                &_wide {
+                    width: 100%;
+                }
+                
+                & > span {
+                    display: inline-block;
+                    margin-left: 10px;
+                }
+                
+                .cooperation__item-additional {
+                    display: block;
+                    color: $theme;
+                }
+            }
+        }
+        
+        &-bottom {
+            display: flex;
+            align-items: center;
+            
+            p {
+                font-size: 19px;
+                font-weight: 900;
+                margin-right: 15px;
+            }
+        }
+    
+        .visual-tour {
+            margin-right: auto;
+        }
+    }
+    
+    @media only screen and (max-width: 1280px) {
+        
+        
+        &__item {
+            &-name {
+                padding-top: 15px;
+                padding-left: 15px;
+            }
+            
+            &-content {
+                padding-top: 15px;
+                padding-right: 15px;
+                padding-bottom: 34px;
+                padding-left: 15px;
+            }
+            
+            &-features {
+                &-item {
+                    font-size: 16px;
+                }
+            }
+            
+            &-bottom {
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    
+    @media only screen and (max-width: 680px) {
+        padding-bottom: 10px;
+        
+        &__sizes {
+            display: none;
+        }
+    
+        &__item {
+            margin-bottom: 20px;
+            
+            &-name {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                max-width: 270px;
+                font-size: 24px;
+    
+                span {
+                    display: block;
+                    padding-top: 0;
+                    padding-right: 9px;
+                    padding-bottom: 1px;
+                    padding-left: 9px;
+        
+                    &:first-child {
+                        padding-top: 5px;
+                    }
+                }
+            }
+        
+            &-features {
+                display: block;
+                margin-bottom: 13px;
+                
+                &-item {
+                    display: block;
+                    width: 100%;
+        
+                    &:nth-child(odd) {
+                        width: 100%;
+                    }
+                    
+                    & > span {
+                        display: block;
+                        margin-left: 0;
+                    }
+                }
+            }
+        
+            &-bottom {
+                display: block;
+                
+                p {
+                    margin-bottom: 6px;
+                }
+            }
+    
+            .visual-tour {
+                margin-bottom: 23px;
+            }
+        }
+    }
+}

@@ -1,0 +1,165 @@
+.about {
+    position: relative;
+    padding-top: 139px;
+    padding-bottom: 8px;
+    
+    &__inner {
+        @include inner;
+    }
+    
+    &__text {
+        position: relative;
+        z-index: 2;
+        @include standardText;
+        max-width: 490px;
+        
+        p {
+            margin-bottom: 26px;
+            
+            &:first-child {
+                max-width: 310px;
+            }
+        }
+    }
+    
+    &__map {
+        position: absolute;
+        top: -15%;
+        right: 1.6%;
+        z-index: 1;
+        width: 70%;
+        
+        img {
+            width: 100%;
+        }
+        
+        &-marker {
+            position: absolute;
+            width: 2%;
+            height: 5%;
+            z-index: 3;
+            background-image: $marker;
+            background-size: 100% 100%;
+            opacity: 0;
+            transform: scale(0);
+            
+            &:nth-child(1) {
+                top: 39.5%;
+                left: 13.2%;
+            }
+            
+            &:nth-child(2) {
+                top: 40.7%;
+                left: 14.9%;
+            }
+            
+            &:nth-child(3) {
+                top: 39.3%;
+                left: 19.5%;
+            }
+            
+            &:nth-child(4) {
+                top: 49.5%;
+                left: 11.5%;
+            }
+            
+            &:nth-child(5) {
+                top: 49.3%;
+                left: 16.2%;
+            }
+            
+            &:nth-child(6) {
+                top: 52.3%;
+                left: 21.9%;
+            }
+            
+            &:nth-child(7) {
+                top: 51.5%;
+                left: 26.2%;
+            }
+        }
+        
+        &.animate {
+            .about__map-marker {
+                animation-name: popup;
+                animation-fill-mode: forwards;
+                
+                &:nth-child(1) {
+                    animation-duration: 1s;
+                    animation-delay: 1s;
+                }
+        
+                &:nth-child(2) {
+                    animation-duration: 1s;
+                    animation-delay: 1.3s;
+                }
+        
+                &:nth-child(3) {
+                    animation-duration: 1s;
+                    animation-delay: 1.6s;
+                }
+        
+                &:nth-child(4) {
+                    animation-duration: 1s;
+                    animation-delay: 1.9s;
+                }
+        
+                &:nth-child(5) {
+                    animation-duration: 1s;
+                    animation-delay: 2.2s;
+                }
+        
+                &:nth-child(6) {
+                    animation-duration: 1s;
+                    animation-delay: 2.5s;
+                }
+        
+                &:nth-child(7) {
+                    animation-duration: 1s;
+                    animation-delay: 2.8s;
+                }
+            }
+        }
+    }
+    
+    @media only screen and (max-width: 680px) {
+        &__text {
+            margin-bottom: 180px;
+            
+            p {
+                margin-bottom: 9px;
+            }
+        }
+    
+        &__map {
+            top: 20%;
+            right: auto;
+            left: 20px;
+            width: 651px;
+        }
+    }
+    
+    @media only screen and (max-width: 480px) {
+        &__map {
+            top: 31%;
+            left: -20px;
+        }
+    }
+}
+
+@keyframes popup {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    
+    50% {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,156 @@
+input::-ms-clear {
+    display: none;
+}
+
+::-moz-placeholder {
+    color: $placeHolder;
+}
+
+:-ms-input-placeholder {
+    color: $placeHolder;
+}
+
+::-webkit-input-placeholder {
+    color: $placeHolder;
+}
+
+:focus::-moz-placeholder {
+    color: transparent;
+}
+
+:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+input.text-input {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    margin: 0 0 20px 0;
+    font-family: $mainFont;
+    font-size: 14px;
+    font-weight: 400;
+    color: $mainColor;
+    border: 1px solid $white;
+    background: $white;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    &.error {
+        color: $red;
+        border: 1px solid $red;
+    }
+    
+    //noinspection ALL
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+        -webkit-text-fill-color: $mainColor !important;
+    }
+    
+    @media only screen and (max-width: 680px) {
+        height: 44px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+textarea.textarea-field {
+    @extend input.text-input;
+    height: 85px;
+    padding: 15px 20px;
+    overflow: hidden;
+    resize: none;
+    
+    &_tall {
+        height: 126px;
+    }
+}
+
+.error-message {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    display: block;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: left;
+    color: $red;
+    white-space: nowrap;
+}
+
+.input-line {
+    position: relative;
+    margin-bottom: 20px;
+    
+    @media only screen and (max-width: 680px) {
+        margin-bottom: 18px;
+    }
+}
+
+.input-label {
+    margin-bottom: 8px;
+    font-size: 19px;
+    color: $lightColor;
+}
+
+.form-box {
+    padding-top: 49px;
+    padding-right: 15px;
+    padding-bottom: 70px;
+    padding-left: 15px;
+    background: $grayLight;
+    box-shadow: $shadowWide;
+    
+    &__holder {
+        max-width: 275px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    &__title {
+        margin-bottom: 15px;
+        font-family: $secondFont;
+        font-size: 28px;
+        line-height: 1.2em;
+    }
+    
+    .main-butn {
+        width: 100%;
+        font-size: 28px;
+        height: 50px;
+    }
+    
+    @media only screen and (max-width: 1024px) {
+        width: 480px;
+        max-width: calc(100% - 30px);
+        padding-top: 35px;
+        padding-right: 15px;
+        padding-bottom: 32px;
+        padding-left: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        
+        &__holder {
+            max-width: 340px;
+        }
+        
+        &__title {
+            font-size: 25px;
+        }
+        
+        .main-butn {
+            height: 44px;
+            font-size: 24px;
+        }
+    }
+}

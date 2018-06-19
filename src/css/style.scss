@@ -1,0 +1,82 @@
+@import "components/variables";
+@import "components/reset";
+@import "components/mixins";
+@import "components/form-elements";
+@import "components/buttons";
+@import "components/typical-elements";
+@import "components/header";
+@import "components/hero";
+@import "components/aside";
+@import "components/about";
+@import "components/cooperation";
+@import "components/interier";
+@import "components/shop";
+@import "components/assortment";
+@import "components/manufacture";
+@import "components/for-partners";
+@import "components/steps";
+@import "components/footer";
+@import "components/sliders";
+@import "components/modal";
+
+@media only screen and (max-width: 1340px) {
+    blockquote {
+        page-break-inside: avoid;
+    }
+}
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    
+    pre,
+    blockquote {
+        border: 1px solid #000000;
+        page-break-inside: avoid;
+    }
+    
+    thead {
+        display: table-header-group;
+    }
+    
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    
+    img {
+        max-width: 100% !important;
+    }
+    
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+    
+    header,
+    footer {
+        position: static;
+    }
+    
+    .main {
+        padding: 100px 0 !important;
+    }
+}

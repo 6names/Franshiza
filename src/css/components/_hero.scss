@@ -1,0 +1,124 @@
+.hero {
+    position: relative;
+    z-index: 5;
+    
+    &__inner {
+        padding-top: 159px;
+        padding-bottom: 85px;
+        @include inner;
+    }
+    
+    &__image {
+        @include fullImage;
+        
+        &:before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            z-index: 2;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($theme, 0.8);
+        }
+    }
+    
+    &__title {
+        margin-bottom: 64px;
+        font-family: $secondFont;
+        font-size: 68px;
+        line-height: 1em;
+        
+        span {
+            display: inline-block;
+            padding-top: 12px;
+            padding-right: 18px;
+            padding-bottom: 5px;
+            padding-left: 18px;
+            background: $white;
+        }
+    }
+    
+    &__category {
+        display: flex;
+        font-size: 19px;
+        line-height: 24px;
+        color: $white;
+        
+        &-item {
+            padding-bottom: 5px;
+            
+            &:not(:first-child) {
+                padding-left: 6.3%;
+                border-left: 1px solid $themeBorder;
+            }
+            
+            &:not(:last-child) {
+                padding-right: 6.3%;
+            }
+        }
+    }
+    
+    &__form {
+        position: absolute;
+        bottom: -148px;
+        left: 0;
+        z-index: 5;
+        display: none;
+        width: 100%;
+    }
+    
+    @media only screen and (max-width: 1024px) {
+        margin-bottom: 77px;
+        
+        &__inner {
+            padding-bottom: 350px;
+        }
+        
+        &__form {
+            display: block;
+        }
+    }
+    
+    @media only screen and (max-width: 680px) {
+        &__inner {
+            padding-top: 75px;
+            padding-bottom: 250px;
+        }
+        
+        &__title {
+            margin-bottom: 27px;
+            font-size: 29px;
+            line-height: 35px;
+        
+            span {
+                padding-top: 0;
+                padding-right: 9px;
+                padding-bottom: 1px;
+                padding-left: 9px;
+                
+                &:first-child {
+                    padding-top: 5px;
+                }
+            }
+        }
+    
+        &__category {
+            font-size: 13px;
+            line-height: 16px;
+        
+            &-item {
+                padding-bottom: 0;
+            
+                &:not(:first-child) {
+                    padding-left: 15px;
+                }
+            
+                &:not(:last-child) {
+                    padding-right: 15px;
+                }
+            }
+        }
+    }
+}

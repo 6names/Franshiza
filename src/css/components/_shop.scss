@@ -1,0 +1,69 @@
+.shop {
+    position: relative;
+    
+    &__inner {
+        @include inner;
+        padding-bottom: 27%;
+        padding-top: 7%;
+    
+        &.animate .shop__image {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 1s 0.5s;
+        }
+    }
+    
+    &__text {
+        position: relative;
+        z-index: 2;
+        max-width: 250px;
+        padding-top: 8%;
+        @include standardText;
+        
+        p {
+            margin-bottom: 20px;
+        }
+    }
+    
+    &__counter {
+        display: block;
+        font-size: 60px;
+        line-height: 1em;
+        font-weight: 300;
+    }
+    
+    &__image {
+        position: absolute;
+        bottom: 10%;
+        left: 2.3%;
+        z-index: 1;
+        width: 77.5%;
+        opacity: 0;
+        transform: translateX(10%);
+        transition: all 0.5s;
+        
+        img {
+            width: 100%;
+        }
+    }
+    
+    @media only screen and (max-width: 1024px) {
+        &__image {
+            width: 100%;
+        }
+    }
+    
+    @media only screen and (max-width: 680px) {
+        &__inner {
+            padding-top: 67px;
+            padding-bottom: 300px;
+        }
+    
+        &__image {
+            bottom: 0;
+            left: 50%;
+            width: 580px;
+            margin-left: -290px;
+        }
+    }
+}

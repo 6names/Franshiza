@@ -1,0 +1,75 @@
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 60;
+    min-width: 320px;
+    color: $white;
+    border-bottom: 1px solid $themeBorder;
+    background-color: transparent;
+    transition: all 0.3s;
+    
+    &__inner {
+        @include inner(1280px, 30px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 20px;
+        padding-bottom: 18px;
+        transition: all 0.3s;
+    }
+    
+    &__phone {
+        font-size: 13px;
+        text-align: right;
+        
+        .call-to {
+            display: block;
+            font-family: $secondFont;
+            font-size: 28px;
+        }
+    }
+    
+    &_fixed {
+        background-color: rgba($theme, 0.9);
+        
+        .header__inner {
+            padding-top: 10px;
+            padding-bottom: 8px;
+        }
+    }
+    
+    @media only screen and (max-width: 1280px) {
+        &__inner {
+            padding-right: 30px;
+        }
+    }
+    
+    @media only screen and (max-width: 1024px) {
+        &__inner {
+            padding-right: 15px;
+        }
+    }
+    
+    @media only screen and (max-width: 680px) {
+        &__inner {
+            align-items: flex-start;
+            padding-top: 10px;
+            padding-bottom: 8px;
+        }
+        
+        &__logo {
+            width: 136px;
+        }
+    
+        &__phone {
+            font-size: 11px;
+        
+            .call-to {
+                font-size: 19px;
+            }
+        }
+    }
+}
+
