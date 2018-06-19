@@ -202,10 +202,10 @@ gulp.task('html-build', function () {
 // Images
 gulp.task('images-build', function () {
     return gulp.src(paths.build.images.src)
-        .pipe(image({
+        /*.pipe(image({
             svgo: false,
             zopflipng: false
-        }))
+        }))*/
         .pipe(gulp.dest(paths.build.images.dist))
 });
 
