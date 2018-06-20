@@ -3429,7 +3429,16 @@ function windowScroll() {
 // Check if content loaded
 document.addEventListener('DOMContentLoaded', function () {
     var pageHtml = document.querySelector('html');
+    var hero = document.querySelector('.hero');
     pageHtml.classList.add('loaded');
+    
+    setTimeout(function () {
+        hero.classList.add('animate');
+    }, 1000);
+    
+    setTimeout(function () {
+        header.classList.add('animate');
+    }, 2000);
     
     // Browser And Platform Detect
     browsers();

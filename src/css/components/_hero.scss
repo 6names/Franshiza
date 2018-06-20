@@ -37,6 +37,9 @@
             padding-bottom: 5px;
             padding-left: 18px;
             background: $white;
+            transform: rotateX(180deg);
+            opacity: 0;
+            transition: all 0.5s;
         }
     }
     
@@ -48,6 +51,20 @@
         
         &-item {
             padding-bottom: 5px;
+            transform: translate3d(0, 10%, 0);
+            opacity: 0;
+            
+            &:nth-child(1) {
+                transition: all 0.5s 0.5s;
+            }
+            
+            &:nth-child(2) {
+                transition: all 0.5s 0.8s;
+            }
+            
+            &:nth-child(3) {
+                transition: all 0.5s 1.1s;
+            }
             
             &:not(:first-child) {
                 padding-left: 6.3%;
@@ -67,6 +84,18 @@
         z-index: 5;
         display: none;
         width: 100%;
+    }
+    
+    &.animate {
+        .hero__title span {
+            transform: rotateX(0deg);
+            opacity: 1;
+        }
+        
+        .hero__category-item {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
     }
     
     @media only screen and (max-width: 1024px) {
