@@ -11,13 +11,33 @@
         position: relative;
         z-index: 2;
         @include standardText;
-        max-width: 490px;
-        
+    
         p {
+            max-width: 490px;
             margin-bottom: 26px;
             
             &:first-child {
                 max-width: 310px;
+            }
+        }
+        
+        ul {
+            li {
+                position: relative;
+                padding-left: 15px;
+                margin-bottom: 15px;
+                
+                &:before {
+                    position: absolute;
+                    content: '';
+                    top: 7px;
+                    left: 0;
+                    display: block;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    background-color: $lightColor;
+                }
             }
         }
     }
@@ -125,6 +145,10 @@
     @media only screen and (max-width: 680px) {
         &__text {
             margin-bottom: 180px;
+            
+            &_low {
+                margin-bottom: 40px;
+            }
             
             p {
                 margin-bottom: 9px;

@@ -531,12 +531,26 @@ a[class*="butn"]:hover {
     z-index: 2;
     font-size: 19px;
     line-height: 24px;
-    color: #585858;
-    max-width: 490px; }
+    color: #585858; }
     .about__text p {
+      max-width: 490px;
       margin-bottom: 26px; }
       .about__text p:first-child {
         max-width: 310px; }
+    .about__text ul li {
+      position: relative;
+      padding-left: 15px;
+      margin-bottom: 15px; }
+      .about__text ul li:before {
+        position: absolute;
+        content: '';
+        top: 7px;
+        left: 0;
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #585858; }
   .about__map {
     position: absolute;
     top: -15%;
@@ -1448,7 +1462,6 @@ a[class*="butn"]:hover {
     .video-box {
       margin-bottom: 23px; }
     .header__inner {
-      align-items: flex-start;
       padding-top: 10px;
       padding-bottom: 8px; }
     .header__logo {
@@ -1485,6 +1498,8 @@ a[class*="butn"]:hover {
         line-height: 22px; }
     .about__text {
       margin-bottom: 180px; }
+      .about__text_low {
+        margin-bottom: 40px; }
       .about__text p {
         margin-bottom: 9px; }
     .about__map {
