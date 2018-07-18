@@ -3327,19 +3327,24 @@ validate('form-c', function (e) {
 // Sliders
 var mainSlider = document.querySelectorAll('.main-slider__holder');
 for (var i = 0; i < mainSlider.length; i++) {
-    var slider = mainSlider[i];
+    (function () {
+        var slider = mainSlider[i];
     
-    tns({
-        container: slider,
-        slideBy: 'page',
-        autoplay: false,
-        controls: true,
-        nav: false,
-        autoHeight: true,
-        speed: 600
-    });
-    var btns = slider.parentElement.parentElement.querySelector('.tns-controls');
-    slider.parentElement.parentElement.querySelector('.tns-inner').insertAdjacentElement('beforeend', btns);
+        tns({
+            container: slider,
+            slideBy: 'page',
+            autoplay: false,
+            controls: true,
+            nav: false,
+            autoHeight: true,
+            speed: 600
+        });
+        
+        setTimeout(function () {
+            var btns = slider.parentElement.parentElement.querySelector('.tns-controls');
+            slider.parentElement.parentElement.querySelector('.tns-inner').insertAdjacentElement('beforeend', btns);
+        }, 1000);
+    })();
 }
 
 // Anchors
