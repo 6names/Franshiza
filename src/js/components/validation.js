@@ -89,7 +89,7 @@ function validate(formEl, callback) {
                     if (name) {
                         switch (name) {
                             case 'name':
-                                re = /^[a-zA-Z]{3,20}$/;
+                                re = /^[a-zA-Zа-яА-Я]{3,20}$/;
                                 patternInput();
                                 break;
                             case 'firstName':
