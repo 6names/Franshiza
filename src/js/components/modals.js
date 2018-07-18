@@ -86,6 +86,8 @@ function testModal(target, callBack) {
             var modal = modals[i];
             modal.classList.add('visually-hidden');
             document.querySelector('.' + target).classList.remove('visually-hidden');
+    
+            removeModal();
             
             if (callBack) {
                 callBack();
