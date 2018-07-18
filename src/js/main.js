@@ -3159,6 +3159,20 @@ validate('form-c', function (e) {
     e.preventDefault();
 });
 
+validate('form-d', function (e) {
+    testModal('thanks-modal');
+    
+    // Change preventDefault to your submit function
+    e.preventDefault();
+});
+
+validate('form-e', function (e) {
+    testModal('thanks-modal');
+    
+    // Change preventDefault to your submit function
+    e.preventDefault();
+});
+
 // Sliders
 var mainSlider = document.querySelectorAll('.main-slider__holder');
 for (var i = 0; i < mainSlider.length; i++) {
